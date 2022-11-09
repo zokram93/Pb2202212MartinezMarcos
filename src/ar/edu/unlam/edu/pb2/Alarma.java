@@ -23,7 +23,7 @@ public class Alarma {
 		return this.listaUsuarios.add(nuevoAdministrador);
 	}
 	public boolean agregarSensorAUnaAlarma(Sensor nuevoSensor) throws SensorDuplicado {
-		if(!listaDeSensores.contains(nuevoSensor)){
+		if(listaDeSensores.contains(nuevoSensor)){
 			throw new SensorDuplicado("Sensor duplicado");
 			
 		}else {
@@ -77,7 +77,7 @@ public class Alarma {
 		Boolean chequear= false;
 		for (Sensor sensor : listaDeSensores) {
 			if(sensor.getEstado()){
-				chequear = true;
+				chequear = false;
 			}
 		}
 		return chequear;

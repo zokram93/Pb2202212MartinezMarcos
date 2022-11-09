@@ -59,7 +59,7 @@ public class Testing {
 		nuevoSensor2.activarAlarma();
 		nuevaAlarma.agregarSensorAUnaAlarma(nuevoSensor);
 		nuevaAlarma.agregarSensorAUnaAlarma(nuevoSensor2);
-		Boolean valorEsperado=true;
+		Boolean valorEsperado=false;
 		Boolean valorObtenido=nuevaAlarma.activarAlarma();
 		assertEquals(valorEsperado,valorObtenido);
 	}

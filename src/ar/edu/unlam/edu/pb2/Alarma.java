@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class Alarma {
 
@@ -81,6 +82,15 @@ public class Alarma {
 			}
 		}
 		return chequear;
+	}
+	public void agregarAccion(ListaDeAccionesRealizadas nuevaAccion) {
+		this.listaDeAcciones.add(nuevaAccion);
+		
+	}
+	public TreeSet<ListaDeAccionesRealizadas> obtenerListaOrdenadaPorNumroDeAccion() {
+		TreeSet<ListaDeAccionesRealizadas> nuevaListaOrdenada = new TreeSet<>(new ListaOrdenadaPorID());
+		nuevaListaOrdenada.addAll(this.listaDeAcciones);
+		return nuevaListaOrdenada;
 	}
 	
 	

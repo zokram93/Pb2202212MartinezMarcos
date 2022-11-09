@@ -16,6 +16,12 @@ public class ListaDeAccionesRealizadas {
 		this.listaDeSensores= new LinkedList<>();
 	}
 	
+	public ListaDeAccionesRealizadas(Integer identificadorDeAccion, TipoDeConfiguracion activacion) {
+		this.identificadorDeAccion=identificadorDeAccion;
+		this.tipoDeConfiguracion =activacion;
+		this.listaDeSensores= new LinkedList<>();
+	}
+
 	public Integer getIdentificadorDeAccion() {
 		return identificadorDeAccion;
 	}

@@ -2,6 +2,8 @@ package ar.edu.unlam.edu.pb2;
 
 import static org.junit.Assert.*;
 
+import java.util.TreeSet;
+
 import org.junit.Test;
 
 public class Testing {
@@ -24,6 +26,10 @@ public class Testing {
 		Alarma nuevaAlarma = new Alarma(1);
 		nuevaCentral.agregarAlarma(nuevaAlarma);
 		
+	}
+	@Test
+	public void crearUsuarioActivador() {
+		Usuario nuevoAdministrador = new UsuarioActivador(1234,"pepe");
 	}
 	@Test
 	public void queSePuedaAgregarUnUsuarioConfiguradorAUnaAlarma(){
@@ -67,6 +73,17 @@ public class Testing {
 	public void queParaUnaAlarmaDeterminadaSePuedaObtenerUnaColeccionOrdenadaDeAccionDeTipoConfiguracionOrdenadasPorIdDeAccion(){
 		Administrador nuevoAdministrador = new Administrador(1234,"pepe");
 		Alarma nuevaAlarma = new Alarma(1);
+		ListaDeAccionesRealizadas nuevaAccion = new ListaDeAccionesRealizadas(01, TipoDeConfiguracion.ACTIVACION);
+		ListaDeAccionesRealizadas nuevaAccion2 = new ListaDeAccionesRealizadas(02, TipoDeConfiguracion.ACTIVACION);
+		ListaDeAccionesRealizadas nuevaAccion3 = new ListaDeAccionesRealizadas(03, TipoDeConfiguracion.ACTIVACION);
+		nuevaAlarma.agregarAccion(nuevaAccion);
+		nuevaAlarma.agregarAccion(nuevaAccion2);
+		nuevaAlarma.agregarAccion(nuevaAccion3);
+		TreeSet<ListaDeAccionesRealizadas> ListaOrdenada = nuevaAlarma.obtenerListaOrdenadaPorNumroDeAccion();
+		for (ListaDeAccionesRealizadas listaDeAccionesRealizadas : ListaOrdenada) {
+			System.out.println(listaDeAccionesRealizadas.getIdentificadorDeAccion());
+		}
+		
 
 	}
 	
